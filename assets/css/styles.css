@@ -154,7 +154,6 @@ ul, ol { list-style: none; }
   padding: .35rem .95rem; margin-bottom: 1.4rem;
 }
 .tag-light { color: var(--gold); border-color: rgba(233, 178, 92, .4); }
-.tag-ice { color: var(--ice-deep); border-color: rgba(47, 110, 132, .35); }
 
 /* ---------- Navegação ---------- */
 .nav {
@@ -390,52 +389,105 @@ ul, ol { list-style: none; }
 .step h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; margin-bottom: .45rem; }
 .step p { color: var(--text-cream-mut); font-size: .97rem; max-width: 26rem; }
 
-/* ---------- Três segmentos ---------- */
-.segs { padding: 5.5rem 0 0; }
-.segs-head { margin-bottom: 3.2rem; }
+/* ---------- Ecossistema Barra Chopp ---------- */
+.eco { padding: 5.5rem 0 4.5rem; }
+.eco-head { margin-bottom: 2.8rem; }
 
-.seg { position: relative; overflow: hidden; padding: 5rem 0; }
-.seg-entrega { background: var(--bg-primary); }
-.seg-espaco { background: var(--wine-deep); }
-.seg-quiosque { background: var(--ice-pale); }
-
-.seg-ghost {
-  position: absolute; top: 50%; left: -.06em;
-  transform: translateY(-50%);
-  font-family: var(--font-display); font-weight: 900;
-  font-size: clamp(6rem, 21vw, 17rem); line-height: 1;
-  letter-spacing: -.02em; text-transform: uppercase;
-  color: transparent; -webkit-text-stroke: 1px rgba(143, 82, 16, .22);
-  white-space: nowrap; pointer-events: none; user-select: none;
+/* V: 3 imagens na frente, traços formando um V aberto */
+.eco-v {
+  position: relative;
+  height: clamp(340px, 42vw, 500px);
+  max-width: 940px; margin-inline: auto;
 }
-.seg-espaco .seg-ghost { -webkit-text-stroke-color: rgba(233, 178, 92, .28); }
-.seg-quiosque .seg-ghost { -webkit-text-stroke-color: rgba(47, 110, 132, .3); }
+.eco-stroke {
+  position: absolute; z-index: 0;
+  height: 2px; width: 33%;
+  background: var(--amber-deep); opacity: .8;
+}
+.eco-stroke--l { left: 7%; top: 46%; transform: rotate(36deg); transform-origin: left center; }
+.eco-stroke--r { right: 7%; top: 46%; transform: rotate(-36deg); transform-origin: right center; }
 
-.seg-grid { display: grid; position: relative; z-index: 1; }
-.seg-copy { max-width: 30rem; justify-self: start; }
-.seg-copy-right { justify-self: end; text-align: right; }
+.eco-v-img {
+  position: absolute; z-index: 1;
+  width: clamp(150px, 19vw, 215px);
+  aspect-ratio: 4/5;
+  border-radius: 16px 16px 16px 4px;
+  border: 1px solid rgba(143, 82, 16, .4);
+  overflow: hidden; display: block;
+  box-shadow: var(--shadow);
+}
+.eco-v-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s var(--ease);
+  will-change: transform;
+}
+.eco-v-img:hover img { transform: scale(1.05); }
+.eco-v-img--bar { top: 4%; left: 2%; }
+.eco-v-img--mid {
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: clamp(165px, 21vw, 240px);
+}
+.eco-v-img--quiosque { top: 4%; right: 2%; }
 
-.seg-title {
+/* Painéis: logo pequenininha + foto inicial ao fundo + descrição */
+.eco-panels {
+  display: grid; gap: 1.8rem;
+  margin-top: 4.5rem;
+}
+.eco-panel {
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+  aspect-ratio: auto; min-height: 420px;
+  border-radius: 18px 18px 18px 4px; overflow: hidden;
+  text-decoration: none; box-shadow: var(--shadow);
+  padding: 1.8rem;
+  isolation: isolate;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  will-change: transform;
+}
+.eco-panel-bg {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .6s var(--ease);
+  will-change: transform;
+}
+.eco-panel-shade {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to top, rgba(23, 18, 16, .9) 8%, rgba(23, 18, 16, .35) 55%, rgba(23, 18, 16, .1) 100%);
+}
+.eco-panel:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -24px rgba(23, 18, 16, .55); }
+.eco-panel:hover .eco-panel-bg { transform: scale(1.05); }
+
+.eco-panel-logo {
+  width: 62px; height: 62px;
+  border-radius: 14px 14px 14px 4px;
+  background: var(--bg-white);
+  padding: 6px; margin-bottom: 1.1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .3);
+}
+.eco-panel-logo img { width: 100%; height: 100%; object-fit: contain; }
+.eco-panel-title {
+  display: block;
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 5vw, 3.4rem);
-  line-height: 1.02; font-weight: 800; letter-spacing: -.015em;
-  margin-bottom: 1rem;
+  font-size: 1.7rem; font-weight: 800; line-height: 1.05;
+  color: var(--text-cream); margin-bottom: .45rem;
 }
-.seg-title em { font-style: italic; font-weight: 600; color: var(--amber-deep); }
-.seg-text { color: var(--text-muted); font-size: 1.05rem; max-width: 26rem; margin-bottom: 1.8rem; }
-
-.seg-title-light { color: var(--text-cream); }
-.seg-title-light em { color: var(--gold); }
-.seg-text-light { color: var(--text-cream-mut); }
-.seg-quiosque .seg-title { color: var(--text-main); }
-.seg-quiosque .seg-title em { color: var(--ice-deep); }
-.seg-quiosque .seg-text { color: #3e5a66; }
+.eco-panel-title em { font-style: italic; font-weight: 600; color: var(--gold); }
+.eco-panel-text {
+  display: block; color: rgba(242, 232, 212, .85);
+  font-size: .95rem; margin-bottom: 1.3rem; max-width: 30ch;
+}
 
 /* ---------- CTA ---------- */
 .cta {
   position: relative; overflow: hidden;
   background: var(--amber-deep); color: var(--bg-white);
   padding: 5.5rem 0;
+}
+.cta-bg {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: .3; pointer-events: none;
 }
 .cta::before {
   content: ""; position: absolute;
@@ -525,6 +577,10 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .kit-grid { grid-template-columns: .9fr 1.1fr; gap: 5rem; }
   .kit-head { position: sticky; top: 6.5rem; align-self: start; }
   .cta-inner { grid-template-columns: 1.2fr .8fr; align-items: center; gap: 3rem; }
+  .eco-panels { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .eco-panel { aspect-ratio: 3/4; min-height: 0; }
+  .eco-panel--mid { --lift: -1.5rem; transform: translateY(var(--lift)); }
+  .eco-panel--mid:hover { transform: translateY(calc(var(--lift) - 6px)); }
 }
 
 @media (max-width: 959px) {
@@ -561,7 +617,13 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 }
 
 @media (max-width: 640px) {
-  .seg-ghost { top: auto; bottom: 1.5rem; left: auto; right: -.05em; transform: none; font-size: 4.6rem; }
+  .eco-v {
+    display: flex; align-items: flex-end; justify-content: center;
+    gap: .7rem; height: auto; max-width: none;
+  }
+  .eco-v-img { position: static; width: 30%; }
+  .eco-v-img--mid { width: 32%; transform: translateY(12px); }
+  .eco-stroke { display: none; }
   .ticket { padding: 1.6rem 1.6rem 1.8rem; }
   .stamp { width: 88px; height: 88px; font-size: .85rem; top: -20px; right: -6px; }
   .hero { padding-top: 6.6rem; }
@@ -575,7 +637,10 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   html.js [data-reveal] { opacity: 1; transform: none; transition: none; }
   .bubble, .marquee-track { animation: none !important; }
   .btn, .link-arrow span, .kit-item, .step-num, .footer-col a,
-  .nav-link::after, .menu-btn span { transition: none; }
+  .nav-link::after, .menu-btn span, .eco-v-img img, .eco-panel-bg,
+  .eco-panel { transition: none; }
   .btn:hover, .kit-item:hover, .step:hover .step-num,
-  .link-arrow:hover span, .footer-col a:hover { transform: none; }
+  .link-arrow:hover span, .footer-col a:hover,
+  .eco-v-img:hover img, .eco-panel:hover .eco-panel-bg,
+  .eco-panel:hover, .eco-panel--mid:hover { transform: none; }
 }
