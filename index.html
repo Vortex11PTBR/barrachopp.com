@@ -2,9 +2,287 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Meu Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra Chopp — Chopp gelado na sua casa</title>
+  <meta name="description" content="Entrega de chopp em casa: barril de 50 litros, chopeira, gás e 50 copos de 400 ml inclusos. Conheça também o Espaço Barra Chopp e o Quiosque Barra Chopp.">
+  <meta name="theme-color" content="#171210">
+  <meta property="og:title" content="Barra Chopp — Chopp gelado na sua casa">
+  <meta property="og:description" content="Barril de 50 litros, chopeira, gás e 50 copos. A festa começa quando o chopp chega.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.barrachopp.com/">
+  <meta property="og:image" content="https://www.barrachopp.com/logos/barrachopp_logo.jpeg">
+  <link rel="icon" type="image/webp" href="assets/img/barrachopp_logo.webp">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..900;1,9..144,500..700&family=Archivo:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-  <h1>Site em construção</h1>
+
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ======= Navegação ======= -->
+  <header class="nav" data-nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Barra Chopp — início">
+        <span class="brand-mark"><img src="assets/img/barrachopp_logo.webp" alt="Logo Barra Chopp" width="720" height="545" fetchpriority="high"></span>
+        <span class="brand-name">Barra<em>Chopp</em></span>
+      </a>
+
+      <nav class="nav-menu" data-menu aria-label="Menu principal">
+        <a class="nav-link" href="index.html#inicio">Início</a>
+        <a class="nav-link" href="index.html#emcasa">Em casa</a>
+        <a class="nav-link" href="index.html#como">Como funciona</a>
+        <a class="nav-link" href="espaco.html">Espaço</a>
+        <a class="nav-link" href="quiosque.html">Quiosque</a>
+        <!-- Troque 5500000000000 pelo número real (DDI + DDD + número) -->
+        <a class="btn btn-primary nav-cta" href="https://wa.me/5500000000000?text=Oi!%20Quero%20pedir%20chopp%20gelado." target="_blank" rel="noopener">Pedir chopp</a>
+      </nav>
+
+      <button class="menu-btn" data-menu-toggle aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ======= Hero ======= -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal>Entrega em casa · Barril de 50 L</p>
+          <h1 class="hero-title" data-reveal style="--d:.06s">Chopp gelado <em>de verdade,</em><br>na sua casa.</h1>
+          <p class="hero-sub" data-reveal style="--d:.12s">A gente leva o barril, a chopeira, o gás e os copos. Instala tudo, deixa na temperatura certa e volta pra buscar. Você só chama os amigos.</p>
+          <div class="hero-actions" data-reveal style="--d:.18s">
+            <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Oi!%20Quero%20pedir%20chopp%20gelado." target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+            <a class="btn btn-ghost" href="index.html#emcasa">Ver o kit completo</a>
+          </div>
+          <ul class="hero-proof" data-reveal style="--d:.24s">
+            <li><span class="dot"></span>Chopeira e gás inclusos</li>
+            <li><span class="dot"></span>Manga com 50 copos de 400 ml</li>
+            <li><span class="dot"></span>Buscamos tudo depois</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" data-reveal style="--d:.1s" aria-hidden="true">
+          <div class="bubbles">
+            <span class="bubble" style="left:8%;--s:22px;--d:0s;--dur:7s"></span>
+            <span class="bubble" style="left:30%;--s:13px;--d:1.6s;--dur:8.5s"></span>
+            <span class="bubble" style="left:56%;--s:26px;--d:.8s;--dur:7.6s"></span>
+            <span class="bubble" style="left:80%;--s:15px;--d:2.4s;--dur:9s"></span>
+          </div>
+          <div class="ticket">
+            <div class="ticket-top">
+              <span class="ticket-label">O kit · barril 50 L</span>
+              <span class="ticket-note">pressão na medida</span>
+            </div>
+            <div class="ticket-big">
+              <span class="ticket-num">50</span><span class="ticket-unit">L</span>
+            </div>
+            <p class="ticket-sub">de chopp puro, gelado e na espuma certa</p>
+            <ul class="ticket-list">
+              <li><b>Chopeira</b><span>inclusa</span></li>
+              <li><b>50 copos</b><span>de 400 ml, lacrados</span></li>
+              <li><b>Cilindro de gás</b><span>incluso</span></li>
+              <li><b>Pingadeira</b><span>inclusa</span></li>
+            </ul>
+          </div>
+          <span class="stamp">Gelado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Marquee ======= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-item">Chopp gelado</span>
+          <span class="marquee-item">Barril de 50 litros</span>
+          <span class="marquee-item">Chopeira inclusa</span>
+          <span class="marquee-item">50 copos de 400 ml</span>
+          <span class="marquee-item">Gás incluso</span>
+          <span class="marquee-item">Pingadeira</span>
+        </div>
+        <div class="marquee-group">
+          <span class="marquee-item">Chopp gelado</span>
+          <span class="marquee-item">Barril de 50 litros</span>
+          <span class="marquee-item">Chopeira inclusa</span>
+          <span class="marquee-item">50 copos de 400 ml</span>
+          <span class="marquee-item">Gás incluso</span>
+          <span class="marquee-item">Pingadeira</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= O kit completo ======= -->
+    <section class="kit" id="emcasa">
+      <div class="wrap kit-grid">
+        <div class="kit-head">
+          <p class="eyebrow" data-reveal>O kit completo</p>
+          <h2 class="section-title" data-reveal style="--d:.05s">A gente leva. A gente instala. A gente <em>busca.</em></h2>
+          <p class="kit-note" data-reveal style="--d:.1s">Nada de correria em véspera de festa. É só escolher o dia — a Barra resolve o resto.</p>
+          <a class="btn btn-primary" href="https://wa.me/5500000000000?text=Oi!%20Quero%20pedir%20o%20kit%20completo." target="_blank" rel="noopener" data-reveal style="--d:.15s">Pedir o kit</a>
+        </div>
+
+        <ol class="kit-list">
+          <li class="kit-item" data-reveal>
+            <span class="kit-num">01</span>
+            <div class="kit-txt">
+              <h3>Chopeira</h3>
+              <p>Instalada e ajustada na hora, com a temperatura no ponto de servir.</p>
+            </div>
+          </li>
+          <li class="kit-item" data-reveal style="--d:.06s">
+            <span class="kit-num">02</span>
+            <div class="kit-txt">
+              <h3>Barril de 50 litros</h3>
+              <p>Cinquenta litros de chopp puro, refrigerado do caminhão até a sua porta.</p>
+            </div>
+          </li>
+          <li class="kit-item" data-reveal style="--d:.12s">
+            <span class="kit-num">03</span>
+            <div class="kit-txt">
+              <h3>Manga de copos</h3>
+              <p>Cinquenta copos de 400 ml, lacrados e higienizados. Um por convidado, sem improviso.</p>
+            </div>
+          </li>
+          <li class="kit-item" data-reveal style="--d:.18s">
+            <span class="kit-num">04</span>
+            <div class="kit-txt">
+              <h3>Cilindro de gás</h3>
+              <p>CO₂ incluso. Pressão estável do primeiro ao último copo, espuma sempre no ponto.</p>
+            </div>
+          </li>
+          <li class="kit-item" data-reveal style="--d:.24s">
+            <span class="kit-num">05</span>
+            <div class="kit-txt">
+              <h3>Pingadeira</h3>
+              <p>Suporte firme que segura o copo e recolhe o excesso de espuma. Mesa limpa a festa inteira.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ======= Como funciona ======= -->
+    <section class="como" id="como">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-light" data-reveal>Como funciona</p>
+        <h2 class="section-title section-title-light" data-reveal style="--d:.05s">Do pedido ao <em>primeiro copo.</em></h2>
+
+        <div class="steps">
+          <article class="step" data-reveal>
+            <span class="step-num">1</span>
+            <h3>Você escolhe o barril</h3>
+            <p>Pilsen, lager ou o sabor do dia. Fecha o dia e o horário — a gente confirma tudo.</p>
+          </article>
+          <article class="step" data-reveal style="--d:.08s">
+            <span class="step-num">2</span>
+            <h3>A gente monta tudo</h3>
+            <p>Chegamos, instalamos a chopeira e deixamos o chopp na temperatura ideal.</p>
+          </article>
+          <article class="step" data-reveal style="--d:.16s">
+            <span class="step-num">3</span>
+            <h3>Você só serve</h3>
+            <p>Fim de festa, a gente volta, desmonta e leva tudo. Você nem lava copo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Três segmentos ======= -->
+    <section class="segs" id="segmentos">
+      <header class="wrap segs-head">
+        <p class="eyebrow" data-reveal>Três jeitos de curtir</p>
+        <h2 class="section-title" data-reveal style="--d:.05s">Uma Barra, <em>três endereços.</em></h2>
+      </header>
+
+      <article class="seg seg-entrega">
+        <span class="seg-ghost" aria-hidden="true">Entrega</span>
+        <div class="wrap seg-grid">
+          <div class="seg-copy" data-reveal>
+            <p class="tag">Entrega em casa</p>
+            <h3 class="seg-title">Em casa,<br><em>sem trabalho.</em></h3>
+            <p class="seg-text">O kit completo chega na sua porta: chopeira, barril de 50 litros, gás, 50 copos e pingadeira. Você só serve.</p>
+            <a class="link-arrow" href="https://wa.me/5500000000000?text=Oi!%20Quero%20pedir%20chopp%20gelado." target="_blank" rel="noopener">Pedir agora <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="seg seg-espaco">
+        <span class="seg-ghost" aria-hidden="true">Festa</span>
+        <div class="wrap seg-grid">
+          <div class="seg-copy seg-copy-right" data-reveal>
+            <p class="tag tag-light">Espaço festa</p>
+            <h3 class="seg-title seg-title-light">Festa completa,<br><em>de ponta a ponta.</em></h3>
+            <p class="seg-text seg-text-light">Nosso espaço, nossa estrutura, seu evento. Chopp gelado e tudo que uma festa boa precisa.</p>
+            <a class="link-arrow link-arrow-light" href="espaco.html">Conhecer o Espaço <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="seg seg-quiosque">
+        <span class="seg-ghost" aria-hidden="true">Quiosque</span>
+        <div class="wrap seg-grid">
+          <div class="seg-copy" data-reveal>
+            <p class="tag tag-ice">No shopping</p>
+            <h3 class="seg-title">Parou, pediu,<br><em>bebeu gelado.</em></h3>
+            <p class="seg-text">Chopp e cerveja artesanal direto do quiosque no shopping da cidade. Pra beber ali, sem pressa.</p>
+            <a class="link-arrow" href="quiosque.html">Ver o Quiosque <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ======= CTA ======= -->
+    <section class="cta">
+      <div class="wrap cta-inner">
+        <h2 class="cta-title" data-reveal>Festa boa começa<br>com <em>chopp gelado.</em></h2>
+        <div class="cta-actions" data-reveal style="--d:.1s">
+          <a class="btn btn-gold btn-lg" href="https://wa.me/5500000000000?text=Oi!%20Quero%20pedir%20chopp%20gelado." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <span class="cta-note">Resposta rápida, em horário comercial</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Rodapé ======= -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-dark" href="index.html">
+          <span class="brand-mark"><img src="assets/img/barrachopp_logo.webp" alt="Logo Barra Chopp" width="720" height="545" loading="lazy" decoding="async"></span>
+          <span class="brand-name">Barra<em>Chopp</em></span>
+        </a>
+        <p class="footer-tag">Chopp gelado em casa, festa completa no Espaço e quiosque no shopping. A Barra em três jeitos de curtir.</p>
+        <a class="footer-social" href="https://www.instagram.com/barrachoppgelado/" target="_blank" rel="noopener">Instagram @barrachoppgelado</a>
+      </div>
+
+      <nav class="footer-col" aria-label="Navegação">
+        <p class="footer-h">Navegue</p>
+        <a href="index.html#inicio">Início</a>
+        <a href="index.html#emcasa">Em casa</a>
+        <a href="index.html#como">Como funciona</a>
+        <a href="espaco.html">Espaço Barra Chopp</a>
+        <a href="quiosque.html">Quiosque Barra Chopp</a>
+      </nav>
+
+      <div class="footer-col">
+        <p class="footer-h">Fale com a gente</p>
+        <a href="https://wa.me/5500000000000?text=Oi!%20Barra%20Chopp!" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/barrachoppgelado/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+
+    <div class="wrap footer-base">
+      <p>© <span data-year>2026</span> Barra Chopp. Todos os direitos reservados.</p>
+      <p>Feito com chopp gelado.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
