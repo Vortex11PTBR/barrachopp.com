@@ -13,6 +13,14 @@
   var toggle = document.querySelector("[data-menu-toggle]");
   var menu = document.querySelector("[data-menu]");
 
+  /* Vídeo autoplay: respeita prefers-reduced-motion */
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video[autoplay]").forEach(function (v) {
+      v.removeAttribute("autoplay");
+      v.pause();
+    });
+  }
+
   /* Nav: estado de rolagem (passivo, barato) */
   if (nav) {
     var onScroll = function () {

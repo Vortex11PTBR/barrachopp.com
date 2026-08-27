@@ -570,6 +570,54 @@ body[data-brand="quiosque"] { --ph-accent: var(--ice-deep); }
 }
 .local-map iframe { width: 100%; height: 100%; border: 0; display: block; }
 
+/* ---------- Aba: vídeo + imagens + descrições (espaço / quiosque) ---------- */
+.story { padding: 2rem 0 5.5rem; }
+.story-video {
+  margin: 2.2rem auto 0; max-width: 420px;
+  border-radius: 22px 22px 22px 6px; overflow: hidden;
+  box-shadow: var(--shadow); background: var(--bg-soft);
+}
+.story-video video { width: 100%; height: auto; display: block; }
+.story-fig { margin: 2.6rem auto 0; text-align: center; max-width: 860px; }
+.story-fig img {
+  border-radius: 22px 22px 22px 6px; box-shadow: var(--shadow);
+  max-width: 100%; max-height: 78vh; height: auto; margin-inline: auto;
+}
+.story-text { max-width: 620px; margin: 2.6rem auto 0; text-align: center; }
+.story-text p { color: var(--text-muted); font-size: 1.08rem; }
+.story-text p + p { margin-top: 1.1rem; }
+.story-text strong { color: var(--text-main); font-weight: 600; }
+.story-impact { max-width: 760px; margin: 3.8rem auto 0; text-align: center; }
+.story-impact h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05;
+  font-weight: 800; letter-spacing: -.015em;
+}
+.story-impact h2 em { font-style: italic; font-weight: 600; color: var(--ph-accent); }
+.story-impact .btn { margin-top: 1.8rem; }
+
+/* ---------- Marcas parceiras (brahma / heineken) ---------- */
+.brands { padding: 3.5rem 0 4.5rem; text-align: center; }
+.brands-label {
+  font-size: .76rem; font-weight: 700; letter-spacing: .24em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.4rem;
+}
+.brands-logos {
+  display: flex; justify-content: center; align-items: center;
+  gap: 1.2rem; flex-wrap: wrap;
+}
+.brands-logo {
+  width: 84px; height: 84px; border-radius: 16px 16px 16px 5px;
+  background: var(--bg-white); padding: 10px;
+  box-shadow: 0 6px 16px rgba(34, 26, 18, .12);
+}
+.brands-logo img { width: 100%; height: 100%; object-fit: contain; }
+.brands-extra {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1.05rem; color: var(--text-muted);
+}
+
 /* ---------- Scroll reveal (só com JS ativo) ---------- */
 html.js [data-reveal] {
   opacity: 0;
