@@ -543,6 +543,33 @@ body[data-brand="quiosque"] { --ph-accent: var(--ice-deep); }
 .ph-note { margin-top: 2.6rem; font-size: .85rem; color: var(--text-muted); }
 .ph-note a { color: var(--ph-accent); font-weight: 600; }
 
+/* ---------- Localização (espaço / quiosque) ---------- */
+.local { padding: 5.5rem 0; }
+.local-grid { display: grid; gap: 2.5rem; }
+.local-sub { color: var(--text-muted); margin: 1.2rem 0 1.8rem; max-width: 30rem; }
+.local-list { display: grid; gap: 1.1rem; margin-bottom: 2rem; }
+.local-list div {
+  display: grid; gap: .2rem;
+  padding-bottom: 1.1rem; border-bottom: 1px solid var(--line);
+}
+.local-list dt {
+  font-size: .72rem; font-weight: 700; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--ph-accent);
+}
+.local-list dd { font-size: 1.02rem; color: var(--text-main); }
+.local-list a {
+  color: var(--ph-accent); font-weight: 600; text-decoration: none;
+  border-bottom: 1px solid transparent; transition: border-color .2s ease;
+}
+.local-list a:hover { border-color: currentColor; }
+.local-map {
+  position: relative;
+  border-radius: 18px 18px 18px 4px; overflow: hidden;
+  box-shadow: var(--shadow);
+  aspect-ratio: 4/3; background: var(--bg-soft);
+}
+.local-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
 /* ---------- Scroll reveal (só com JS ativo) ---------- */
 html.js [data-reveal] {
   opacity: 0;
@@ -564,6 +591,28 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .kit-grid { grid-template-columns: .9fr 1.1fr; gap: 5rem; }
   .kit-head { position: sticky; top: 6.5rem; align-self: start; }
   .cta-inner { grid-template-columns: 1.2fr .8fr; align-items: center; gap: 3rem; }
+  .local-grid { grid-template-columns: 1fr 1.05fr; gap: 4rem; align-items: center; }
+
+  /* Ecossistema no desktop: composição centralizada e equilibrada */
+  .eco-head { text-align: center; }
+  .eco-v {
+    position: relative;
+    gap: clamp(1rem, 4vw, 2rem);
+    max-width: 980px;
+  }
+  .eco-v::before {
+    content: ""; position: absolute;
+    inset: -40% -8%;
+    background: radial-gradient(closest-side, rgba(227, 164, 76, .16), transparent 70%);
+    pointer-events: none;
+  }
+  .eco-v-img { width: clamp(190px, 22vw, 270px); position: relative; z-index: 1; }
+  .eco-v-img--mid { transform: translateY(24px); }
+
+  .eco-panels { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .eco-panel { max-width: none; width: auto; justify-self: stretch; aspect-ratio: 4/5; min-height: 0; }
+  .eco-panel--mid { --lift: 1.5rem; transform: translateY(var(--lift)); }
+  .eco-panel--mid:hover { transform: translateY(calc(var(--lift) - 6px)); }
 }
 
 @media (max-width: 959px) {
