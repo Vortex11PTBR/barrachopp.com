@@ -332,7 +332,7 @@ ul, ol { list-style: none; }
 .marquee-item::after {
   content: "✦"; font-size: .75rem; opacity: .65; margin-left: 1.6rem;
 }
-@keyframes scrollX { to { transform: translateX(-50%); } }
+@keyframes scrollX { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ---------- Kit (o que chega em casa) ---------- */
 .kit { padding: 5.5rem 0; }
@@ -573,21 +573,22 @@ body[data-brand="quiosque"] { --ph-accent: var(--ice-deep); }
 /* ---------- Aba: vídeo + imagens + descrições (espaço / quiosque) ---------- */
 .story { padding: 2rem 0 5.5rem; }
 .story-video {
-  margin: 2.2rem auto 0; max-width: 420px;
+  margin: 2.2rem auto 0; max-width: 300px;
   border-radius: 22px 22px 22px 6px; overflow: hidden;
   box-shadow: var(--shadow); background: var(--bg-soft);
 }
 .story-video video { width: 100%; height: auto; display: block; }
-.story-fig { margin: 2.6rem auto 0; text-align: center; max-width: 860px; }
+.story-fig { margin: 3rem auto 0; text-align: center; max-width: 860px; }
 .story-fig img {
+  display: block;
   border-radius: 22px 22px 22px 6px; box-shadow: var(--shadow);
   max-width: 100%; max-height: 78vh; height: auto; margin-inline: auto;
 }
-.story-text { max-width: 620px; margin: 2.6rem auto 0; text-align: center; }
-.story-text p { color: var(--text-muted); font-size: 1.08rem; }
-.story-text p + p { margin-top: 1.1rem; }
+.story-text { max-width: 620px; margin: 3rem auto 0; text-align: center; }
+.story-text p { color: var(--text-muted); font-size: 1.08rem; line-height: 1.7; }
+.story-text p + p { margin-top: 1.4rem; }
 .story-text strong { color: var(--text-main); font-weight: 600; }
-.story-impact { max-width: 760px; margin: 3.8rem auto 0; text-align: center; }
+.story-impact { max-width: 760px; margin: 5rem auto 0; text-align: center; }
 .story-impact h2 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05;
@@ -604,10 +605,11 @@ body[data-brand="quiosque"] { --ph-accent: var(--ice-deep); }
 }
 .brands-logos {
   display: flex; justify-content: center; align-items: center;
-  gap: 1.2rem; flex-wrap: wrap;
+  gap: clamp(.8rem, 3vw, 2.5rem); flex-wrap: wrap;
 }
 .brands-logo {
-  width: 84px; height: 84px; border-radius: 16px 16px 16px 5px;
+  width: clamp(120px, 24vw, 210px); aspect-ratio: 1;
+  border-radius: 16px 16px 16px 5px;
   background: var(--bg-white); padding: 10px;
   box-shadow: 0 6px 16px rgba(34, 26, 18, .12);
 }
@@ -661,6 +663,16 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .eco-panel { max-width: none; width: auto; justify-self: stretch; aspect-ratio: 4/5; min-height: 0; }
   .eco-panel--mid { --lift: 1.5rem; transform: translateY(var(--lift)); }
   .eco-panel--mid:hover { transform: translateY(calc(var(--lift) - 6px)); }
+
+  /* Aba: letra maior e mais respiro entre blocos no desktop */
+  .story-text p { font-size: 1.25rem; }
+  .story-text, .story-fig { margin-top: 4.2rem; }
+  .story-video { margin-top: 3.2rem; }
+  .story-impact { margin-top: 6.5rem; }
+
+  /* Marcas do mesmo tamanho das 3 fotos do ecossistema */
+  .brands-logo { width: clamp(190px, 22vw, 270px); }
+  .brands-extra { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 
 @media (max-width: 959px) {
@@ -704,18 +716,25 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .eco-v-img { position: static; width: 30%; }
   .eco-v-img--mid { width: 32%; transform: translateY(12px); }
   .eco-stroke { display: none; }
+  .brands-logo { width: min(30%, 120px); }
   .ticket { padding: 1.6rem 1.6rem 1.8rem; }
   .stamp { width: 88px; height: 88px; font-size: .85rem; top: -20px; right: -6px; }
   .hero { padding-top: 6.6rem; }
   .kit-item { gap: 1rem; }
   .kit-num { width: 2rem; }
+
+  /* Localização no celular: mais respiro e botão inteiro */
+  .local-grid { gap: 3rem; }
+  .local-list { gap: 1.4rem; }
+  .local-list dd { font-size: 1.05rem; }
+  .local .btn { width: 100%; justify-content: center; }
 }
 
 /* ---------- Motion reduzido (acessibilidade / low-end) ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   html.js [data-reveal] { opacity: 1; transform: none; transition: none; }
-  .bubble, .marquee-track { animation: none !important; }
+  .bubble { animation: none !important; }
   .btn, .link-arrow span, .kit-item, .step-num, .footer-col a,
   .nav-link::after, .menu-btn span, .eco-v-img img, .eco-panel-bg,
   .eco-panel { transition: none; }
