@@ -172,7 +172,7 @@ ul, ol { list-style: none; }
 .brand-mark {
   width: 44px; height: 44px; flex: none;
   border-radius: 12px 12px 12px 3px;
-  background: var(--bg-white); overflow: hidden;
+  background: var(--bg-primary); overflow: hidden;
   display: grid; place-items: center;
   box-shadow: 0 2px 8px rgba(34, 26, 18, .14);
 }
@@ -448,7 +448,7 @@ ul, ol { list-style: none; }
 .eco-panel-logo {
   width: 62px; height: 62px;
   border-radius: 14px 14px 14px 4px;
-  background: var(--bg-white);
+  background: var(--bg-primary);
   padding: 6px; margin-bottom: 1.1rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, .3);
 }
@@ -527,7 +527,7 @@ body[data-brand="quiosque"] { --ph-accent: var(--ice-deep); }
 .ph-logo {
   width: 116px; height: 116px;
   border-radius: 20px 20px 20px 6px;
-  background: var(--bg-white); box-shadow: var(--shadow);
+  background: var(--bg-primary); box-shadow: var(--shadow);
   display: grid; place-items: center; margin-bottom: 1.8rem;
 }
 .ph-logo img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
@@ -599,10 +599,7 @@ body[data-brand="quiosque"] { --ph-accent: var(--ice-deep); }
 
 /* ---------- Marcas parceiras (brahma / heineken) ---------- */
 .brands { padding: 3.5rem 0 4.5rem; text-align: center; }
-.brands-label {
-  font-size: .76rem; font-weight: 700; letter-spacing: .24em;
-  text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.4rem;
-}
+.brands-label { margin-bottom: 1.4rem; }
 .brands-logos {
   display: flex; justify-content: center; align-items: center;
   gap: clamp(.8rem, 3vw, 2.5rem); flex-wrap: wrap;
@@ -616,9 +613,24 @@ body[data-brand="quiosque"] { --ph-accent: var(--ice-deep); }
 .brands-logo img { width: 100%; height: 100%; object-fit: contain; }
 .brands-extra {
   display: inline-flex; align-items: center;
-  font-family: var(--font-display); font-style: italic;
-  font-size: 1.05rem; color: var(--text-muted);
+  font-family: var(--font-body); font-size: .8rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--amber-deep);
+  border: 1px solid rgba(143, 82, 16, .35); border-radius: 999px;
+  padding: .6rem 1.2rem;
 }
+.story-pisos { display: grid; gap: 1.4rem; margin: 3rem auto 0; max-width: 860px; }
+.piso {
+  padding: 1.4rem 1.5rem;
+  background: var(--bg-white);
+  border: 1px solid var(--line);
+  border-radius: 16px 16px 16px 4px;
+}
+.piso h3 {
+  font-family: var(--font-display); font-size: 1.2rem; font-weight: 800;
+  color: var(--ph-accent); margin-bottom: .4rem;
+}
+.piso p { color: var(--text-muted); font-size: .95rem; }
 
 /* ---------- Scroll reveal (só com JS ativo) ---------- */
 html.js [data-reveal] {
@@ -634,6 +646,7 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 @media (min-width: 800px) {
   .steps { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; }
+  .story-pisos { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 }
 
 @media (min-width: 960px) {
@@ -666,13 +679,12 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 
   /* Aba: letra maior e mais respiro entre blocos no desktop */
   .story-text p { font-size: 1.25rem; }
-  .story-text, .story-fig { margin-top: 4.2rem; }
+  .story-text, .story-fig, .story-pisos { margin-top: 4.2rem; }
   .story-video { margin-top: 3.2rem; }
   .story-impact { margin-top: 6.5rem; }
 
   /* Marcas do mesmo tamanho das 3 fotos do ecossistema */
   .brands-logo { width: clamp(190px, 22vw, 270px); }
-  .brands-extra { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 }
 
 @media (max-width: 959px) {
