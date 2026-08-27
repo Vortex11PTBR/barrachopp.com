@@ -393,23 +393,15 @@ ul, ol { list-style: none; }
 .eco { padding: 5.5rem 0 4.5rem; }
 .eco-head { margin-bottom: 2.8rem; }
 
-/* V: 3 imagens na frente, traços formando um V aberto */
+/* V: 3 imagens lado a lado, a do meio levemente mais baixa */
 .eco-v {
-  position: relative;
-  height: clamp(340px, 42vw, 500px);
-  max-width: 940px; margin-inline: auto;
+  display: flex; align-items: flex-end; justify-content: center;
+  gap: .8rem;
+  max-width: 860px; margin-inline: auto;
 }
-.eco-stroke {
-  position: absolute; z-index: 0;
-  height: 2px; width: 33%;
-  background: var(--amber-deep); opacity: .8;
-}
-.eco-stroke--l { left: 7%; top: 46%; transform: rotate(36deg); transform-origin: left center; }
-.eco-stroke--r { right: 7%; top: 46%; transform: rotate(-36deg); transform-origin: right center; }
 
 .eco-v-img {
-  position: absolute; z-index: 1;
-  width: clamp(150px, 19vw, 215px);
+  width: clamp(120px, 24vw, 210px);
   aspect-ratio: 4/5;
   border-radius: 16px 16px 16px 4px;
   border: 1px solid rgba(143, 82, 16, .4);
@@ -422,13 +414,7 @@ ul, ol { list-style: none; }
   will-change: transform;
 }
 .eco-v-img:hover img { transform: scale(1.05); }
-.eco-v-img--bar { top: 4%; left: 2%; }
-.eco-v-img--mid {
-  bottom: 0; left: 50%;
-  transform: translateX(-50%);
-  width: clamp(165px, 21vw, 240px);
-}
-.eco-v-img--quiosque { top: 4%; right: 2%; }
+.eco-v-img--mid { transform: translateY(18px); }
 
 /* Painéis: logo pequenininha + foto inicial ao fundo + descrição */
 .eco-panels {
@@ -438,6 +424,7 @@ ul, ol { list-style: none; }
 .eco-panel {
   position: relative; display: flex; flex-direction: column; justify-content: flex-end;
   aspect-ratio: auto; min-height: 420px;
+  width: 100%; max-width: 620px; justify-self: center;
   border-radius: 18px 18px 18px 4px; overflow: hidden;
   text-decoration: none; box-shadow: var(--shadow);
   padding: 1.8rem;
@@ -577,10 +564,6 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .kit-grid { grid-template-columns: .9fr 1.1fr; gap: 5rem; }
   .kit-head { position: sticky; top: 6.5rem; align-self: start; }
   .cta-inner { grid-template-columns: 1.2fr .8fr; align-items: center; gap: 3rem; }
-  .eco-panels { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .eco-panel { aspect-ratio: 3/4; min-height: 0; }
-  .eco-panel--mid { --lift: -1.5rem; transform: translateY(var(--lift)); }
-  .eco-panel--mid:hover { transform: translateY(calc(var(--lift) - 6px)); }
 }
 
 @media (max-width: 959px) {
@@ -642,5 +625,5 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .btn:hover, .kit-item:hover, .step:hover .step-num,
   .link-arrow:hover span, .footer-col a:hover,
   .eco-v-img:hover img, .eco-panel:hover .eco-panel-bg,
-  .eco-panel:hover, .eco-panel--mid:hover { transform: none; }
+  .eco-panel:hover { transform: none; }
 }
