@@ -243,13 +243,15 @@ ul, ol { list-style: none; }
   box-shadow: var(--shadow);
 }
 .ticket-top {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 1rem; padding-bottom: .9rem; margin-bottom: 1.4rem;
-  border-bottom: 1px solid rgba(42, 26, 8, .3);
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1.4rem;
 }
 .ticket-label {
   font-size: .7rem; font-weight: 700; letter-spacing: .22em;
   text-transform: uppercase; color: rgba(42, 26, 8, .8);
+  display: inline-block;
+  padding-bottom: .9rem; padding-right: 2.2rem;
+  border-bottom: 1px solid rgba(42, 26, 8, .3);
 }
 .ticket-note {
   font-family: var(--font-display); font-style: italic;
@@ -279,9 +281,10 @@ ul, ol { list-style: none; }
 .ticket-list span { color: rgba(42, 26, 8, .68); text-align: right; }
 
 .ticket-media {
-  width: 76px; height: 76px; flex: none;
-  border-radius: 12px 12px 12px 4px;
+  position: absolute; top: 0; right: 0;
+  width: 44%; aspect-ratio: 1/1;
   object-fit: cover;
+  border-radius: 0 18px 0 0;
 }
 
 .bubbles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
@@ -505,6 +508,7 @@ ul, ol { list-style: none; }
 .footer-wa:hover { color: #7df5a5; }
 .footer-wa .btn-icon { width: 18px; height: 18px; }
 .footer-ig {
+  display: inline-block;
   width: 18px; height: 18px; border-radius: 5px;
   vertical-align: -4px; margin-right: .35rem;
 }
@@ -633,7 +637,6 @@ body[data-brand] .nav:not(.is-scrolled) .menu-btn span { background: var(--text-
   background: var(--bg-primary); padding: 10px;
 }
 .brands-logo img { width: 100%; height: 100%; object-fit: contain; }
-.brands-logo--wide { aspect-ratio: 16/7; }
 .brands-extra {
   display: inline-flex; align-items: center;
   font-family: var(--font-body); font-size: .8rem; font-weight: 700;
