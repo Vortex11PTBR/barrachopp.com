@@ -170,13 +170,13 @@ ul, ol { list-style: none; }
 
 .brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; position: relative; z-index: 3; }
 .brand-mark {
-  width: 44px; height: 44px; flex: none;
+  width: 56px; height: 56px; flex: none;
   border-radius: 12px 12px 12px 3px;
   background: var(--bg-primary); overflow: hidden;
   display: grid; place-items: center;
   box-shadow: 0 2px 8px rgba(34, 26, 18, .14);
 }
-.brand-mark img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+.brand-mark img { width: 100%; height: 100%; object-fit: contain; padding: 3px; }
 .brand-name {
   font-family: var(--font-display); font-weight: 800;
   font-size: 1.25rem; letter-spacing: -.01em; line-height: 1;
@@ -446,10 +446,10 @@ ul, ol { list-style: none; }
 .eco-panel:hover .eco-panel-bg { transform: scale(1.05); }
 
 .eco-panel-logo {
-  width: 62px; height: 62px;
+  width: 84px; height: 84px;
   border-radius: 14px 14px 14px 4px;
   background: var(--bg-primary);
-  padding: 6px; margin-bottom: 1.1rem;
+  padding: 5px; margin-bottom: 1.1rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, .3);
 }
 .eco-panel-logo img { width: 100%; height: 100%; object-fit: contain; }
@@ -525,12 +525,12 @@ body[data-brand="quiosque"] { --ph-accent: var(--ice-deep); }
 
 .ph { padding: 10rem 0 6rem; min-height: 72vh; }
 .ph-logo {
-  width: 116px; height: 116px;
+  width: 156px; height: 156px;
   border-radius: 20px 20px 20px 6px;
   background: var(--bg-primary); box-shadow: var(--shadow);
   display: grid; place-items: center; margin-bottom: 1.8rem;
 }
-.ph-logo img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
+.ph-logo img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
 .ph-title {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 6vw, 4rem);
