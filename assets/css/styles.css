@@ -526,22 +526,32 @@ body[data-brand="brasa"] { --ph-accent: #b3442a; }
 }
 .ph-logo img { width: 100%; height: 100%; object-fit: contain; }
 
-/* Hero com banner de fundo (espaço / quiosque / brasa e chopp) */
-.ph--banner { position: relative; overflow: hidden; padding: 9rem 0 5.5rem; }
+/* Hero com banner (faixa larga no topo, atrás do menu e da logo) */
+.ph--banner { position: relative; overflow: hidden; padding: 0; }
 .ph-banner {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover;
+  position: absolute; top: 0; left: 0; right: 0;
+  width: 100%; height: clamp(300px, 42vw, 400px);
+  object-fit: cover;
 }
 .ph-banner-shade {
-  position: absolute; inset: 0;
+  position: absolute; top: 0; left: 0; right: 0;
+  height: clamp(300px, 42vw, 400px);
   background: linear-gradient(to bottom,
     rgba(23, 18, 16, .55) 0%,
-    rgba(23, 18, 16, .25) 28%,
-    rgba(23, 18, 16, 0) 50%,
-    rgba(245, 239, 227, .6) 78%,
+    rgba(23, 18, 16, .25) 40%,
+    rgba(23, 18, 16, 0) 62%,
+    rgba(245, 239, 227, .75) 88%,
     var(--bg-primary) 100%);
 }
-.ph--banner .wrap { position: relative; z-index: 1; }
+.ph-banner-content { position: relative; z-index: 1; padding-top: 7.5rem; }
+
+/* Menu claro enquanto o banner aparece atrás */
+body[data-brand] .nav:not(.is-scrolled) .nav-link,
+body[data-brand] .nav:not(.is-scrolled) .brand-name { color: var(--text-cream); }
+body[data-brand] .nav:not(.is-scrolled) .brand-name em { color: var(--gold); }
+body[data-brand] .nav:not(.is-scrolled) .nav-link::after { background: var(--gold); }
+body[data-brand] .nav:not(.is-scrolled) .menu-btn { border-color: rgba(242, 232, 212, .35); }
+body[data-brand] .nav:not(.is-scrolled) .menu-btn span { background: var(--text-cream); }
 .ph-title {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 6vw, 4rem);
