@@ -282,8 +282,8 @@ ul, ol { list-style: none; }
 
 .ticket-big { display: flex; align-items: center; gap: .35rem; }
 .ticket-media {
-  width: 104px; height: 104px; flex: none;
-  margin-left: auto;
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  width: 150px; height: 150px;
   border-radius: 16px 16px 16px 4px;
   object-fit: cover;
 }
@@ -532,6 +532,8 @@ body[data-brand="brasa"] { --ph-accent: #b3442a; }
   display: grid; place-items: center; margin-bottom: 1.8rem;
 }
 .ph-logo img { width: 100%; height: 100%; object-fit: contain; }
+body[data-brand="espaco"] .ph-logo img { width: 135%; height: 135%; }
+.eco-panel-logo--espaco img { width: 135%; height: 135%; }
 
 /* Hero com banner (faixa larga no topo, atrás do menu e da logo) */
 .ph--banner { position: relative; overflow: hidden; padding: 0; }
