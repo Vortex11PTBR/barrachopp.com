@@ -607,8 +607,7 @@ body[data-brand="quiosque"] { --ph-accent: var(--ice-deep); }
 .brands-logo {
   width: clamp(120px, 24vw, 210px); aspect-ratio: 1;
   border-radius: 16px 16px 16px 5px;
-  background: var(--bg-white); padding: 10px;
-  box-shadow: 0 6px 16px rgba(34, 26, 18, .12);
+  background: var(--bg-primary); padding: 10px;
 }
 .brands-logo img { width: 100%; height: 100%; object-fit: contain; }
 .brands-extra {
