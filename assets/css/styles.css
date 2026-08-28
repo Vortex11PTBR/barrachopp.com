@@ -280,11 +280,12 @@ ul, ol { list-style: none; }
 .ticket-list b { font-weight: 700; }
 .ticket-list span { color: rgba(42, 26, 8, .68); text-align: right; }
 
+.ticket-big { display: flex; align-items: center; gap: .35rem; }
 .ticket-media {
-  position: absolute; top: 0; right: 0;
-  width: 44%; aspect-ratio: 1/1;
+  width: 104px; height: 104px; flex: none;
+  margin-left: auto;
+  border-radius: 16px 16px 16px 4px;
   object-fit: cover;
-  border-radius: 0 18px 0 0;
 }
 
 .bubbles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
