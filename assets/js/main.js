@@ -82,12 +82,17 @@
     var track = car.querySelector("[data-track]");
     var slides = Array.prototype.slice.call(track.children);
     var countEl = car.querySelector("[data-count]");
+    var labelEl = car.querySelector("[data-label]");
     var pos = 0;
 
     function update() {
       var w = car.querySelector(".carousel-viewport").clientWidth || 1;
       track.style.transform = "translateX(" + -pos * w + "px)";
       if (countEl) countEl.textContent = (pos + 1) + " / " + slides.length;
+      if (labelEl && slides[pos]) {
+        var ed = slides[pos].getAttribute("data-ed");
+        if (ed) labelEl.textContent = ed;
+      }
     }
     function go(n) {
       pos = Math.max(0, Math.min(slides.length - 1, pos + n));
@@ -108,6 +113,7 @@
   var lb = document.querySelector(".lightbox");
   if (lb) {
     var lbImg = lb.querySelector(".lightbox-img");
+    var lbLabel = lb.querySelector("[data-lb-label]");
     var lbSlides = [];
     var lbPos = 0;
 
@@ -115,6 +121,7 @@
       var img = lbSlides[lbPos].querySelector("img");
       lbImg.src = img.src;
       lbImg.alt = img.alt || "";
+      if (lbLabel) lbLabel.textContent = lbSlides[lbPos].getAttribute("data-ed") || "";
     }
     function lbOpen(slides, i) {
       lbSlides = slides;
