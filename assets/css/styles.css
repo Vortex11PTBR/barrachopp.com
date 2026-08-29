@@ -630,18 +630,22 @@ body[data-brand] .nav:not(.is-scrolled) .menu-btn span { background: var(--text-
 /* ---------- Edições Brasa & Chopp ---------- */
 .edicoes { padding: 1rem 0 5.5rem; }
 .edicoes-head { margin-bottom: 2.8rem; }
+.edicoes-list { display: grid; gap: 2.6rem; }
 .edicao {
   position: relative;
-  max-width: 760px; margin-inline: auto;
+  max-width: 580px; margin-inline: auto;
   border-radius: 22px 22px 22px 6px; overflow: hidden;
   background: var(--bg-dark); box-shadow: var(--shadow);
 }
-.edicao-label {
-  position: absolute; top: 1rem; left: 1rem; z-index: 3;
-  background: var(--amber); color: #2a1a08;
-  font-size: .72rem; font-weight: 700; letter-spacing: .2em;
-  text-transform: uppercase; padding: .5rem 1rem; border-radius: 999px;
+.edicao-head {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; padding: 1.15rem 1.4rem;
 }
+.edicao-title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 1.4rem; letter-spacing: -.01em; color: var(--text-cream);
+}
+.edicao-title em { font-style: italic; font-weight: 600; color: var(--gold); }
 .carousel { position: relative; }
 .carousel-viewport {
   overflow: hidden;
@@ -671,9 +675,10 @@ body[data-brand] .nav:not(.is-scrolled) .menu-btn span { background: var(--text-
 .carousel-arrow--prev { left: .8rem; }
 .carousel-arrow--next { right: .8rem; }
 .carousel-count {
-  position: absolute; bottom: .8rem; right: 1rem; z-index: 3;
   font-size: .75rem; font-weight: 600; color: rgba(242, 232, 212, .9);
-  background: rgba(23, 18, 16, .45); padding: .3rem .7rem; border-radius: 999px;
+  background: rgba(23, 18, 16, .6); border: 1px solid rgba(242, 232, 212, .15);
+  padding: .3rem .75rem; border-radius: 999px;
+  white-space: nowrap;
 }
 
 /* ---------- Lightbox (tela cheia) ---------- */
