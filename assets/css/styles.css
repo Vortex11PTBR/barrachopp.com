@@ -253,10 +253,6 @@ ul, ol { list-style: none; }
   padding-bottom: .9rem; padding-right: 2.2rem;
   border-bottom: 1px solid rgba(42, 26, 8, .3);
 }
-.ticket-note {
-  font-family: var(--font-display); font-style: italic;
-  font-size: .9rem; color: rgba(42, 26, 8, .75);
-}
 .ticket-big { display: flex; align-items: baseline; gap: .35rem; }
 .ticket-num {
   font-family: var(--font-display); font-weight: 900;
@@ -834,6 +830,10 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .nav-cta { margin: 1rem 0 0; width: 100%; justify-content: center; }
 }
 
+@media (max-width: 380px) {
+  .ticket-media { width: 118px; height: 118px; }
+}
+
 @media (max-width: 640px) {
   .eco-v {
     display: flex; align-items: flex-end; justify-content: center;
@@ -844,7 +844,6 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .eco-stroke { display: none; }
   .brands-logo { width: min(30%, 120px); }
   .ticket { padding: 1.6rem 1.6rem 1.8rem; }
-  .stamp { width: 88px; height: 88px; font-size: .85rem; top: -20px; right: -6px; }
   .hero { padding-top: 6.6rem; }
   .kit-item { gap: 1rem; }
   .kit-num { width: 2rem; }
