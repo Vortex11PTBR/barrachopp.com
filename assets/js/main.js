@@ -75,4 +75,81 @@
   /* Ano no rodapé */
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
+
+  /* ===== Carrosséis das edições ===== */
+  var carousels = document.querySelectorAll("[data-carousel]");
+  carousels.forEach(function (car) {
+    var track = car.querySelector("[data-track]");
+    var slides = Array.prototype.slice.call(track.children);
+    var countEl = car.querySelector("[data-count]");
+    var pos = 0;
+
+    function update() {
+      var w = car.querySelector(".carousel-viewport").clientWidth || 1;
+      track.style.transform = "translateX(" + -pos * w + "px)";
+      if (countEl) countEl.textContent = (pos + 1) + " / " + slides.length;
+    }
+    function go(n) {
+      pos = Math.max(0, Math.min(slides.length - 1, pos + n));
+      update();
+    }
+
+    var prev = car.querySelector("[data-prev]");
+    var next = car.querySelector("[data-next]");
+    if (prev) prev.addEventListener("click", function () { go(-1); });
+    if (next) next.addEventListener("click", function () { go(1); });
+    window.addEventListener("resize", update);
+
+    car._slides = slides;
+    update();
+  });
+
+  /* ===== Lightbox (tela cheia) ===== */
+  var lb = document.querySelector(".lightbox");
+  if (lb) {
+    var lbImg = lb.querySelector(".lightbox-img");
+    var lbSlides = [];
+    var lbPos = 0;
+
+    function lbShow() {
+      var img = lbSlides[lbPos].querySelector("img");
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || "";
+    }
+    function lbOpen(slides, i) {
+      lbSlides = slides;
+      lbPos = i;
+      lbShow();
+      lb.hidden = false;
+      document.body.style.overflow = "hidden";
+    }
+    function lbClose() {
+      lb.hidden = true;
+      document.body.style.overflow = "";
+    }
+
+    lb.querySelector(".lightbox-close").addEventListener("click", lbClose);
+    lb.addEventListener("click", function (e) { if (e.target === lb) lbClose(); });
+    lb.querySelector(".lightbox-prev").addEventListener("click", function () {
+      lbPos = (lbPos - 1 + lbSlides.length) % lbSlides.length;
+      lbShow();
+    });
+    lb.querySelector(".lightbox-next").addEventListener("click", function () {
+      lbPos = (lbPos + 1) % lbSlides.length;
+      lbShow();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (lb.hidden) return;
+      if (e.key === "Escape") lbClose();
+      if (e.key === "ArrowLeft") lb.querySelector(".lightbox-prev").click();
+      if (e.key === "ArrowRight") lb.querySelector(".lightbox-next").click();
+    });
+
+    document.querySelectorAll("[data-full]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var car = btn.closest("[data-carousel]");
+        if (car && car._slides) lbOpen(car._slides, car._slides.indexOf(btn));
+      });
+    });
+  }
 })();

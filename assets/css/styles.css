@@ -627,6 +627,80 @@ body[data-brand] .nav:not(.is-scrolled) .menu-btn span { background: var(--text-
 .story-impact h2 em { font-style: italic; font-weight: 600; color: var(--ph-accent); }
 .story-impact .btn { margin-top: 1.8rem; }
 
+/* ---------- Edições Brasa & Chopp ---------- */
+.edicoes { padding: 1rem 0 5.5rem; }
+.edicoes-head { margin-bottom: 2.8rem; }
+.edicoes-grid { display: grid; gap: 2rem; }
+.edicao {
+  position: relative;
+  border-radius: 22px 22px 22px 6px; overflow: hidden;
+  background: var(--bg-dark); box-shadow: var(--shadow);
+}
+.edicao-label {
+  position: absolute; top: 1rem; left: 1rem; z-index: 3;
+  background: var(--amber); color: #2a1a08;
+  font-size: .72rem; font-weight: 700; letter-spacing: .2em;
+  text-transform: uppercase; padding: .5rem 1rem; border-radius: 999px;
+}
+.carousel { position: relative; }
+.carousel-viewport {
+  overflow: hidden;
+  aspect-ratio: 4/5; max-height: 540px;
+}
+.carousel-track {
+  display: flex;
+  transition: transform .45s var(--ease);
+  will-change: transform;
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  display: grid; place-items: center;
+  background: var(--bg-dark);
+  border: 0; padding: 0; cursor: zoom-in;
+}
+.carousel-slide img { width: 100%; height: 100%; object-fit: contain; }
+.carousel-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 0; background: rgba(23, 18, 16, .55); color: #fff;
+  font-size: 1.5rem; line-height: 1; cursor: pointer;
+  display: grid; place-items: center;
+  transition: background-color .2s ease, transform .2s var(--ease);
+}
+.carousel-arrow:hover { background: rgba(23, 18, 16, .82); transform: translateY(-50%) scale(1.06); }
+.carousel-arrow--prev { left: .8rem; }
+.carousel-arrow--next { right: .8rem; }
+.carousel-count {
+  position: absolute; bottom: .8rem; right: 1rem; z-index: 3;
+  font-size: .75rem; font-weight: 600; color: rgba(242, 232, 212, .9);
+  background: rgba(23, 18, 16, .45); padding: .3rem .7rem; border-radius: 999px;
+}
+
+/* ---------- Lightbox (tela cheia) ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 90;
+  background: rgba(13, 10, 7, .96);
+  display: grid; place-items: center;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-img {
+  max-width: 92vw; max-height: 88vh;
+  border-radius: 8px; box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+}
+.lightbox button {
+  position: absolute; z-index: 2;
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 0; cursor: pointer;
+  background: rgba(242, 232, 212, .14); color: var(--text-cream);
+  font-size: 1.4rem; line-height: 1;
+  display: grid; place-items: center;
+  transition: background-color .2s ease;
+}
+.lightbox button:hover { background: rgba(242, 232, 212, .3); }
+.lightbox-close { top: 1.1rem; right: 1.2rem; }
+.lightbox-prev { left: .9rem; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: .9rem; top: 50%; transform: translateY(-50%); }
+
 /* ---------- Marcas parceiras (brahma / heineken) ---------- */
 .brands { padding: 3.5rem 0 4.5rem; text-align: center; }
 .brands-label { margin-bottom: 1.4rem; }
@@ -684,6 +758,7 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .kit-head { position: sticky; top: 6.5rem; align-self: start; }
   .cta-inner { grid-template-columns: 1.2fr .8fr; align-items: center; gap: 3rem; }
   .local-grid { grid-template-columns: 1fr 1.05fr; gap: 4rem; align-items: center; }
+  .edicoes-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 
   /* Ecossistema no desktop: composição centralizada e equilibrada */
   .eco-head { text-align: center; }
@@ -776,6 +851,7 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
   html.js [data-reveal] { opacity: 1; transform: none; transition: none; }
   .bubble { animation: none !important; }
+  .carousel-track { transition: none; }
   .btn, .link-arrow span, .kit-item, .step-num, .footer-col a,
   .nav-link::after, .menu-btn span, .eco-v-img img, .eco-panel-bg,
   .eco-panel { transition: none; }
