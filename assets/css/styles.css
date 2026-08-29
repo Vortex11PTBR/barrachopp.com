@@ -793,6 +793,10 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .story-video { margin-top: 3.2rem; }
   .story-impact { margin-top: 6.5rem; }
 
+  /* Quiosque: fotos em largura única e bem renderizadas no PC */
+  body[data-brand="quiosque"] .story-fig { max-width: 640px; }
+  body[data-brand="quiosque"] .story-fig img { max-height: none; }
+
   /* Marcas do mesmo tamanho das 3 fotos do ecossistema */
   .brands-logo { width: clamp(190px, 22vw, 270px); }
 }
