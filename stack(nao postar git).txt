@@ -1,0 +1,26 @@
+Stack do site
+
+**Frontend (100% estático, sem build):**
+- **HTML5** semântico — 4 páginas: `index.html`, `espaco.html`, `quiosque.html`, `brasaechopp.html`
+- **CSS puro** (variáveis/custom properties, sem pré-processador) — `assets/css/styles.css`
+- **JavaScript vanilla** (~1KB) — `assets/js/main.js`: nav scroll, menu mobile, reveals via `IntersectionObserver`, ano automático
+- **Zero frameworks/bibliotecas** — sem React, Tailwind, Bootstrap, jQuery
+
+**Fontes:**
+- **Fraunces** (display serifada, variável) — títulos/números
+- **Archivo** (grotesca, variável) — corpo/UI
+
+**Mídia (tudo otimizado):**
+- Imagens → **WebP** (Python/Pillow): logos sem fundo/redondas, fotos otimizadas
+- Vídeo do Espaço → **MP4 H.264** comprimido com ffmpeg (16MB → 4.1MB)
+- Mapas → **Google Maps embed** (lazy)
+
+**Animações:**
+- Só **CSS nativo** (`transform`/`opacity`) + `@keyframes` — marquee, bolhas, hovers
+- `prefers-reduced-motion` respeitado
+
+**Deploy/Infra:**
+- **Git + GitHub** (repositório `Vortex11PTBR/barrachopp.com`)
+- **Cloudflare Pages** — deploy automático a cada push (domínio: `barrachopp.com`)
+
+**Peso total:** ~1MB de assets, site leve, pensado pra 60fps em celulares fracos.
