@@ -12,7 +12,7 @@ import re
 import sys
 from html.parser import HTMLParser
 
-PAGES = ["index.html", "espaco.html", "quiosque.html", "brasaechopp.html", "privacidade.html"]
+PAGES = ["index.html", "espaco.html", "quiosque.html", "brasaechopp.html", "privacidade.html", "404.html"]
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 errors = []
 

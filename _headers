@@ -9,6 +9,10 @@
 /, /index.html, /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
+/manifest.webmanifest
+  Content-Type: application/manifest+json
+  Cache-Control: public, max-age=3600
+
 /assets/*.css
 /assets/*.js
   Cache-Control: public, max-age=86400
